@@ -14,7 +14,7 @@ IMAGE_SHAPE = (IMAGE_SIZE, IMAGE_SIZE, 3)
 
 --- /task ---
 
-[[[generic-theory-colours]]]v
+[[[generic-theory-colours]]]
 
 --- task ---
 Now, below your `IMAGE_SHAPE` variable, import the MobileNetV2 model — which is trained to identify loads of different objects — pass it your `IMAGE_SHAPE` as its `input_shape` and store it in an `original_model` variable.
@@ -24,7 +24,7 @@ original_model = tf.keras.applications.MobileNetV2(input_shape=IMAGE_SHAPE)
 ```
 --- /task ---
 
-Since MobileNetV2 is designed to run on a mobile device with limited battery, like a phone, it's not as large or as powerful as some other models. This means it doesn't always make the best guesses. Before you start changing it, test how good it is by asking it to identify a photo of a dog. Functions to let you do this easily have already been included in the notebook, but to understand how they work, cheack out the [Testing your computer's vision project](#).
+Since MobileNetV2 is designed to run on a mobile device with limited battery, like a phone, it's not as large or as powerful as some other models. This means it doesn't always make the best guesses. Before you start changing it, test how good it is by asking it to identify a photo of a dog. Functions to let you do this easily have already been included in the notebook, but to understand how they work, check out the [Testing your computer's vision project](#).
 
 --- task ---
 Below the model import, add this line:

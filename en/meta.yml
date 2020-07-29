@@ -1,6 +1,6 @@
-title: retraining-model
+title: Cats vs dogs
 hero_image: images/banner.png
-description: retraining-model description
+description: Take a machine vision model that is bad at recgonising cats and dogs, and train it to be really good at it.
 version: 4
 listed: false
 copyedit: false

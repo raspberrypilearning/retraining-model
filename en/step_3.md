@@ -38,7 +38,7 @@ predict_imagenet('https://dojo.soy/predict-dog')
 --- task ---
 Now run all the code and see how good the model's predictions are!
 
-You can run all the code by opening the `Runtime` menu and choosing `Run all`.
+You can run all the code by opening the `Runtime` menu and choosing `Run all`. The first time you do this, it might take a while, because your program will have to download a lot of data both for the training dataset and the model itself.
 --- /task ---
 
 ![The 'File' menu in Google Colab, with 'Save a copy in Drive' highlighted.](images/dog_prediction_original.png)
@@ -50,6 +50,8 @@ Remove the call to `predict_imagenet`, you only needed it for testing.
 --- /task ---
 
 You need to remove the top layer from the existing MobileNetV2 model, where it decides which of the many objects it's been trained to identify is in the image, so you can add your own layers related to cats and dogs. This can be done when loading the model.
+
+![The same layer diagram as previously, except that the final layer shows a set of several blue dots being removed to be replaced by a pair of green dots.](./images/layer_change.png)
 
 --- task ---
 Update the line where you load the `original_model` to add the `include_top` parameter and set it to false.

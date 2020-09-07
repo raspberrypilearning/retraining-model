@@ -10,7 +10,7 @@ global_average_layer = tf.keras.layers.GlobalAveragePooling2D()
 ```
 --- /task ---
 
-You just used that layer type as TensorFlow supplies it, but for the next one you need to take what you know about your data and apply it: because this classifier is deciding between two classes, its output should be a two numbers. The higher number will indicate the predicted class.
+You just used that layer type as TensorFlow supplies it, but for the next one you need to take what you know about your data and apply it: because this classifier is deciding between two classes, its output should be two numbers. The higher number will indicate the predicted class.
 
 --- task ---
 Below the `global_average_layer` add a variable for `prediction_layer`:
@@ -41,7 +41,7 @@ Next, you have to **compile** your model — convert it into a form that you can
 
 The learning rate tells your model how quickly to learn. You don't want it too small, as it might take far too long to learn anything. However, you don't want it too big or your model may rush ahead with the first thing that seems sort-of right, and miss an important rule or insight. You'll use a learning rate of `0.0001`.
 
-The loss function is how your model will check its performance during training. It's a mathmatical rule and, for now, not something you need to worry about the details of. You'll use one called cross entropy loss, which is a good choice for image classification.
+The loss function is how your model will check its performance during training. You'll use one called cross entropy loss, which is a good choice for image classification.
 
 --- task ---
 Below your existing code, create a variable for the base learning rate, then compile the model with that parameter and cross entropy loss. Also, tell the model to print out its accuracy as it's training.

@@ -1,20 +1,8 @@
 ## Introduction
 
-### What is a machine learning model?
-
-A model is a set of rules a computer follows to complete a machine learning task, like determining what is in a picture it's shown.
-
-These rules are divided up into **layers**. Each layer looks at the results of the one before it and tests them against some rules to decide what results to pass to the next layer.
-
-![A single black circle connected by arrows to each circle in a column of three pink circles. Each of those circles is in turn connected by arrows to both circles in a column of two pink circles, each of which is connected by arrows to all of the circles in a column of four pink circles. Finally, those four circles are connected by arrows to two green circles.](images/neural_network_diagram.png)
-
-Within each layer there are nodes, which have each learned a rule while the model was being trained, and will test it and produce a result when the model is predicting.
-
-The very first layer is the input to the model — an image in this case. The first layer is often called the input layer for this reason. The last, or output, layer of a classifier model like this will always have a number of nodes equal to the number of classifications the model is trained to identify. For example, in the model you will be creating there will be two nodes in the final layer, as it will be classifying its inputs into either pictures of dogs, or pictures of cats.
-
 ### What you will make
 
-You will take an existing model trained to recognise images and retrain it to determine whether pictures show dogs or cats.
+You will take an existing model trained to recognise lots of different kinds of images and retrain it to determine whether images show dogs or cats.The big advantage of this is that the model already knows how to identify interesting features of an image. You just need to remove the final layer, where it decides what classes those features match with, and train a new one of your own on data that only contains cats and dogs.
 
 You will also create code to measure how well the model can do this, and to show how much you've improved on the original model in this task.
 
@@ -26,9 +14,15 @@ This project assumes you already know some Python. Specifically, it assumes you 
 
 + Variables
 + Lists
-+ Functions, including creating your own function that accepts arguments
++ Functions, including creating your own function that accepts parameters
 
-It also assumes that you know the basics of how to interact with an image classifying model and get a prediction from it. If you don't, you can learn this in the [testing your compueter's vision project](https://projects.raspberrypi.org/en/projects/testing-vision).
+If you don't, you can learn all three by completing one of the following projects:
+
++ [Pride and Prejudice for zombies](https://projects.raspberrypi.org/en/projects/pride-prejudice-zombies)
++ [Secret Agent Chat](https://projects.raspberrypi.org/en/projects/secret-agent-chat)
++ [Deck of cards](https://projects.raspberrypi.org/en/projects/deck-of-cards)
+
+The project also assumes that you know the basics of how to interact with an image classifying model and get a prediction from it. If you don't, you can learn this in the [testing your compueter's vision project](https://projects.raspberrypi.org/en/projects/testing-vision).
 
 --- /collapse ---
 

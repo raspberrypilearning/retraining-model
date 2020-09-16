@@ -22,9 +22,13 @@ Run the image prediction code and check out the results!
 
 --- /task ---
 
+--- save ---
+
 --- task ---
 
-Try loading a few different images into it to see what predictions it makes. You'll have to use images hosted on the internet. You can use the instructions found in [Testing your computer's vision](https://learning-admin.raspberrypi.org/en/projects/testing-vision/4) to store the images in Google Drive and create URLs for them that you can pass to `predict_image`.
+Try loading a few different images into it to see what predictions it makes. You'll have to use images hosted on the internet. You can use the instructions below to store the images in Google Drive and create URLs for them that you can pass to `predict_image`.
 You'll also have to make sure they're `.jpg` files, or modify the `get_image_from_url` function that was supplied with the notebook.
 
 --- /task ---
+
+[[[generic-google-drive-image]]]

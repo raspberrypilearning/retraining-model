@@ -1,6 +1,25 @@
-## Get and split training data
+## Prepare your model for retraining
 
-The first thing you'll need to train a model is some data. Models don't learn in the way a human might, by being taught rules. They learn from examples, usually thousands of them, and use those to create their own rules. Some of those rules may be recognising parts and then combining that reognition into a whole, like a human might. For example, if the training data for a cats vs dogs classifer there are no pictures of black dogs, but many of black cats, the model may learn the rule 'black = cat', which will cause problems if you later try to classify pictures of a black dog. So you have to make sure that the full diversity of things the model may eventually be asked to classify is represented. However, for this project, you will be using an existing dataset of cats and dogs that is provided by the TensorFlow library, so someone has already done that work for you.
+Instead of training a whole new model, you'll be loading an existing one, called MobileNetV2, and changing what it classifies. The MobileNetV2 model is trained to classify lots of different images. This means it is already trained to identify interesting features of an image, which makes retraining it to use those features to recognise cats or dogs much quicker than creating an 'is this a cat or a dog?' model from nothing.
+
+--- collapse ---
+---
+title: What is a machine learning model?
+---
+
+A model is a set of rules a computer follows to complete a machine learning task, like determining what is in a picture it's shown.
+
+These rules are divided up into **layers**. Each layer looks at the results of the one before it and tests them against some rules to decide what results to pass to the next layer.
+
+![A single black circle connected by arrows to each circle in a column of three pink circles. Each of those circles is in turn connected by arrows to both circles in a column of two pink circles, each of which is connected by arrows to all of the circles in a column of four pink circles. Finally, those four circles are connected by arrows to two green circles.](images/neural_network_diagram.png)
+
+Within each layer there are nodes, which have each learned a rule while the model was being trained, and will test it and produce a result when the model is predicting.
+
+The very first layer is the input to the model — an image in this case. The first layer is often called the input layer for this reason. The last, or output, layer of a classifier model like this will always have a number of nodes equal to the number of classifications the model is trained to identify. For example, in the model you will be creating there will be two nodes in the final layer, as it will be classifying its inputs into either pictures of dogs, or pictures of cats.
+
+--- /collapse ---
+
+Since MobileNetV2 is designed to run on a mobile device with limited battery, like a phone, it's not as large or as powerful as some other models. This means it doesn't always make the best guesses. Before you start changing it, test how good it is by asking it to identify a photo of a dog. Functions to let you do this easily have already been included in the notebook, but to understand how they work, check out the [Testing your computer's vision project](#).
 
 A Google Colab project has been prepared for you with some starter code. The first thing to do is to open that up and save your own copy to work on.
 
@@ -18,66 +37,75 @@ Before you start changing anything, make sure you save the notebook to your driv
 
 --- /task ---
 
-There's already some code, in the second cell, that loads the `cats_vs_dogs` training data. This data is a collection of image files and **labels** for these files, telling the computer which image is of a cat, and which of a dog.
-
-```python
-import tensorflow_datasets as tfds
-(raw_training, raw_validation, raw_testing), metadata = tfds.load(
-    'cats_vs_dogs',
-    split=['train[:80%]', 'train[80%:90%]', 'train[90%:]'],
-    with_info=True,
-    as_supervised=True,
-)
-```
-
-The data gets broken into three groups, with the percentages defined in the `split` parameter of the load call:
-
-Training data
-: This data is used to train the model — to learn rules and decide how important they are.
-
-Validation data
-: This data is used to evaluate how well the model is performing while it is being trained. It is checked regularly during the training process. It has to be separate to the training data, or the model might learn only the exact images in the training data, with no general rules for identifying a dog or cat.
-
-Testing data
-: This data is not used during the training process, but is used in evaluating how well it performs on unseen data. This check is used to avoid the risk of **overfitting**, where the model learns rules that are specific to the training and validation datasets but do not apply to all cats and dogs.
-
-
-The data in those three groups needs to be broken into **batches** — groups of images. Each batch gets used to train the model before the model's **weights**, which define how important each rule is, get updated. The bigger the batch, the longer the gap between updates. 
-
-There's no real rule for how big your batches should be, and it may be worth experimenting with different batch sizes on different data, to see if you get better results. Popular sizes are 32, 64, 128, and 256. It is possible to use batches as small as a single image, or as large as your whole dataset. For now, though, you're going to use 32.
-
 --- task ---
 
-In the first blank cell in the notebook, create a `BATCH_SIZE` variable with the value of 32. 
+First, define the size of the images you're going to be using. The dataset that you'll be using to train the model is made up of 160x160 pixel images and, because it's needed in some of the code that came in the notebook, that value is already stored in an `IMAGE_SIZE` variable. So you can reuse it when defining the image shape here. However, because of how colour works on computers, the images are actually three sets of 160x160 pixels — one each of the red, blue, and green values that combine to form the colour displayed at any given pixel. You can see more details on this below, if you're interested.
 
-```python
-BATCH_SIZE = 32
+In the first empty cell, create an `IMAGE_SHAPE` variable:
+
+```python3
+IMAGE_SHAPE = (IMAGE_SIZE, IMAGE_SIZE, 3)
 ```
+
+This tells the program that images will be 160x160 pixels, with three layers of colour.
 
 --- /task ---
 
-The use of uppercase letters here is a convention for variables that are manually set by the programmer, but not changed in the course of the program. You could just enter 32 directly where the variable gets used, but this makes it easier to update later.
-
-Each batch is chosen randomly from a **shuffle buffer** of images selected from the full test, validation, or trainng dataset. You have to define the size of this buffer. The bigger it is, the more randomly shuffled your images will be, which is usually a good thing, but the slower the program will run. Again, start by creating a variable for the buffer size.
+[[[generic-theory-colours]]]
 
 --- task ---
-
-Below your previous `BATCH_SIZE` variable, add this code:
+Now, below your `IMAGE_SHAPE` variable, import the MobileNetV2 model — which is trained to identify loads of different objects — pass it your `IMAGE_SHAPE` as its `input_shape` and store it in an `original_model` variable.
 
 ```python
-SHUFFLE_BUFFER_SIZE = 1000
+original_model = tf.keras.applications.MobileNetV2(input_shape=IMAGE_SIZE)
+```
+--- /task ---
+
+--- task ---
+Below the model import, add this line:
+
+```python
+predict_imagenet('https://dojo.soy/predict-dog')
 ```
 
 --- /task ---
 
 --- task ---
-Now that you've set your batch and buffer sizes, you need to break your training, validation, and testing data up into batches. This code will create the shuffle buffers and choose the batches from them. Add it below the two variables you just created.
+Now run all the code and see how good the model's predictions are!
+
+You can run all the code by opening the `Runtime` menu and choosing `Run all`. The first time you do this, it might take a while, because your program will have to download a lot of data both for the training dataset and the model itself.
+--- /task ---
+
+![The 'File' menu in Google Colab, with 'Save a copy in Drive' highlighted.](images/dog_prediction_original.png)
+
+There are a couple of dog breeds in there, but most of the model's perferred classifications aren't very good! That's why you're going to improve it!
+
+--- task ---
+Remove the call to `predict_imagenet`, you only needed it for testing.
+--- /task ---
+
+You need to remove the top layer from the existing MobileNetV2 model, where it decides which of the many objects it's been trained to identify is in the image, so you can add your own layers related to cats and dogs. This can be done when loading the model.
+
+![The same layer diagram as previously, except that the final layer shows a set of several blue dots being removed to be replaced by a pair of green dots.](./images/layer_change.png)
+
+--- task ---
+Update the line where you load the `original_model` to add the `include_top` parameter and set it to false.
 
 ```python
-training_batches = trainig_data.shuffle(SHUFFLE_BUFFER_SIZE).batch(BATCH_SIZE)
-validation_batches = validation_data.shuffle(SHUFFLE_BUFFER_SIZE).batch(BATCH_SIZE)
-testing_batches = testing_data.shuffle(SHUFFLE_BUFFER_SIZE).batch(BATCH_SIZE)
+original_model = tf.keras.applications.MobileNetV2(input_shape=IMAGE_SHAPE, include_top=False)
+```
+--- /task ---
+
+Finally, because you don't want to change anything in the original model, you should set it to be untrainable.
+
+--- task ---
+
+Below the line where you create `original_model`, set its `trainable` property to false.
+
+```python
+original_model.trainable = False
 ```
 
-
 --- /task ---
+
+--- save ---

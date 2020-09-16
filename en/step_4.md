@@ -1,6 +1,8 @@
 ## Add your new layers
 
-In order to train the MobileNetV2 model you've loaded to identify cats and dogs, you need to add two layers to it. One to convert the existing outputs of the model into a format that makes sense for your images, and the other to give the final classification of the image as either a cat or a dog.
+In order to train the MobileNetV2 model you've loaded to identify cats and dogs, you need to add two layers to it. One to convert the existing outputs of the model into a format that makes sense for your images, and the other to give the final classification of the image as either a cat or a dog. 
+
+The model doesn't actually know these are cats and dogs, of course, it's just using the two nodes to represent two diffrent categories of things. Which category is cats, and which is dogs, is something that the pre-written `predict_image` function — which you'll use to test images later — will translate for you by using the **labels** that came with the original training data.
 
 --- task ---
 In the next blank cell in the notebook add this line of code to create the layer that reshapes the outputs of the existing model and store it in a variable.
@@ -71,3 +73,5 @@ Run all the code in the notebook by opening the `Runtime` menu and choosing `Run
 ![The model summary table, displayed as the output of the code in Google Colab.](images/model_summary.png)
 
 Look at the summary of the model that's printed out. In particular, look at the last three lines. This model has over two million parameters, but you're only training a little over a thousand of them. This is the huge advantage of retraining a model, over building an entirely new one: There's a lot less to train, so it will train much faster.
+
+--- save ---

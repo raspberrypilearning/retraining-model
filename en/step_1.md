@@ -2,9 +2,9 @@
 
 ### What you will make
 
-You will take an existing model trained to recognise lots of different kinds of images and retrain it to determine whether images show dogs or cats.The big advantage of this is that the model already knows how to identify interesting features of an image. You just need to remove the final layer, where it decides what classes those features match with, and train a new one of your own on data that only contains cats and dogs.
+You will take an existing model trained to recognise lots of different kinds of images and retrain it to determine whether images show dogs or cats. The existing model already knows how to identify interesting features of an image. You will retrain the final layer of the model, which decides what those interesting features make up.
 
-You will also create code to measure how well the model can do this, and to show how much you've improved on the original model in this task.
+You will also measure how well the model can do this new job, and show how much you've improved on the original model in this task.
 
 --- collapse ---
 ---
@@ -15,12 +15,6 @@ This project assumes you already know some Python. Specifically, it assumes you 
 + Variables
 + Lists
 + Functions, including creating your own function that accepts parameters
-
-If you don't, you can learn all three by completing one of the following projects:
-
-+ [Pride and Prejudice for zombies](https://projects.raspberrypi.org/en/projects/pride-prejudice-zombies)
-+ [Secret Agent Chat](https://projects.raspberrypi.org/en/projects/secret-agent-chat)
-+ [Deck of cards](https://projects.raspberrypi.org/en/projects/deck-of-cards)
 
 The project also assumes that you know the basics of how to interact with an image classifying model and get a prediction from it. If you don't, you can learn this in the [testing your compueter's vision project](https://projects.raspberrypi.org/en/projects/testing-vision).
 
@@ -42,8 +36,8 @@ title: What you will need
 title: What you will learn
 ---
 
-+ What machine learning models are made of
-+ How models are trained
++ The structure of image recognition models
++ How those models are trained
 + How to measure how well a model works
 
 --- /collapse ---

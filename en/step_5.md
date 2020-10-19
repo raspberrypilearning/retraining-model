@@ -6,7 +6,7 @@ The first thing you need to do is set the number of **epochs** you'll train for.
 
 --- task ---
 
-In the next blank cell, create a `TRAINING_EPOCHS` variable and set it to 10.
+In the next blank cell, create a `TRAINING_EPOCHS` variable and set it to `10`.
 
 ```python
 TRAINING_EPOCHS = 10

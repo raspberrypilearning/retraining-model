@@ -41,7 +41,7 @@ BATCH_SIZE = 32
 
 The use of upper case letters here is a convention for variables that are manually set by the programmer, but not changed in the course of the program. You could just enter 32 directly where the variable gets used, but this makes it easier to update later.
 
-Each batch is chosen randomly from a **shuffle buffer** of images selected from the full test, validation, or trainng dataset. You have to define the size of this buffer. The bigger it is, the more randomly shuffled your images will be, which is usually a good thing, but the slower the program will run. Again, start by creating a variable for the buffer size.
+Each batch is chosen randomly from a **shuffle buffer** of images selected from the full test, validation, or training dataset. You have to define the size of this buffer. The bigger it is, the more randomly shuffled your images will be, which is usually a good thing, but the slower the program will run. Again, start by creating a variable for the buffer size.
 
 --- task ---
 

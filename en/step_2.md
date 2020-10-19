@@ -89,7 +89,7 @@ You need to remove the top layer from the existing MobileNetV2 model, where it d
 ![The same layer diagram as previously, except that the final layer shows a set of several blue dots being removed to be replaced by a pair of green dots.](images/layer_change.png)
 
 --- task ---
-Update the line where you load the `original_model` to add the `include_top` parameter and set it to false.
+Update the line where you load the `original_model` to add the `include_top` parameter and set it to `False`.
 
 ```python
 original_model = tf.keras.applications.MobileNetV2(input_shape=IMAGE_SHAPE, include_top=False)
@@ -100,7 +100,7 @@ Finally, because you don't want to change anything else in the original model, y
 
 --- task ---
 
-Below the line where you create `original_model`, set its `trainable` property to false.
+Below the line where you create `original_model`, set its `trainable` property to `False`.
 
 ```python
 original_model.trainable = False

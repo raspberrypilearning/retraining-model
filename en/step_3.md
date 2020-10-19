@@ -1,6 +1,6 @@
 ## Get and split training data
 
-The next thing you'll need to train a model is some data. Models learn from examples, usually thousands of them, and use those to create their own rules. Some of those rules may be recognising parts and then combining that reognition into a whole. This can lead to problems if you're not using varied data to train your model. For example, if the training data for a cats vs dogs classifer has no pictures of black dogs, but many of black cats, the model may learn the rule 'black = cat', which will cause problems if you later try to classify pictures of a black dog. So you have to make sure that the full variety of things the model may eventually be asked to classify is represented. However, for this project, you will be using an existing dataset of cats and dogs that is provided by the TensorFlow library, so someone has already done that work for you.
+The next thing you'll need to train a model is some data. Models learn from examples, usually thousands of them, and use those to create their own rules. Some of those rules may be recognising parts and then combining that recognition into a whole. This can lead to problems if you're not using varied data to train your model. For example, if the training data for a cats vs dogs classifer has no pictures of black dogs, but many of black cats, the model may learn the rule 'black = cat', which will cause problems if you later try to classify pictures of a black dog. So you have to make sure that the full variety of things the model may eventually be asked to classify is represented. However, for this project, you will use an existing dataset of cats and dogs that is provided by the TensorFlow library, so someone has already done that work for you.
 
 It's worth noting that one of the cool things about machine learning models is that they remember everything they learned from the training data, without needing to store the training data itself. This means you can use millions of images to train a model without making the model any bigger than if you'd used a few hundred images! However, a model trained on millions of images will be much better at guessing things correctly than one trained on a few hundred.
 
@@ -25,7 +25,7 @@ Validation data
 : This data is used to evaluate how well the model is performing while it is being trained. It is checked regularly during the training process. It has to be separate to the training data, or the model might learn only the exact images in the training data, with no general rules for identifying a dog or cat.
 
 Testing data
-: This data is not used during the training process, but is used in evaluating how well it performs on unseen data. This check is used to avoid the risk of **overfitting**, where the model learns rules that are specific to the training and validation datasets but do not apply to all cats and dogs.
+: This data is not used during the training process, but is used to evaluate how well it performs on unseen data. This check is used to avoid the risk of **overfitting**, where the model learns rules that are specific to the training and validation datasets, but do not apply to all cats and dogs.
 
 
 The data in those three groups needs to be broken into **batches** — groups of images. Each batch gets used to train the model before the model's **weights**, which define how important each rule is, get updated. The bigger the batch, the longer the gap between updates. 
@@ -42,7 +42,7 @@ BATCH_SIZE = 32
 
 --- /task ---
 
-The use of uppercase letters here is a convention for variables that are manually set by the programmer, but not changed in the course of the program. You could just enter 32 directly where the variable gets used, but this makes it easier to update later.
+The use of upper case letters here is a convention for variables that are manually set by the programmer, but not changed in the course of the program. You could just enter 32 directly where the variable gets used, but this makes it easier to update later.
 
 Each batch is chosen randomly from a **shuffle buffer** of images selected from the full test, validation, or trainng dataset. You have to define the size of this buffer. The bigger it is, the more randomly shuffled your images will be, which is usually a good thing, but the slower the program will run. Again, start by creating a variable for the buffer size.
 
@@ -57,7 +57,7 @@ SHUFFLE_BUFFER_SIZE = 1000
 --- /task ---
 
 --- task ---
-Now that you've set your batch and buffer sizes, you need to break your training, validation, and testing data up into batches. This code will create the shuffle buffers and choose the batches from them. Add it below the two variables you just created.
+Now that you've set your batch and buffer sizes, you need to break your training, validation, and testing data up into batches. This code creates the shuffle buffers and chooses the batches from them. Add it below the two variables you just created.
 
 ```python
 training_batches = training_data.shuffle(SHUFFLE_BUFFER_SIZE).batch(BATCH_SIZE)

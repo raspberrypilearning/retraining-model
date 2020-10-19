@@ -15,7 +15,7 @@ These rules are divided up into **layers**. Each layer looks at the results of t
 
 Within each layer there are nodes, which have each learned a rule while the model was being trained, and will test it and produce a result when the model is predicting.
 
-The very first layer is the input to the model — an image in this case. The first layer is often called the input layer for this reason. The last, or output, layer of a classifier model like this will always have a number of nodes equal to the number of classifications the model is trained to identify. For example, in the model you will be creating there will be two nodes in the final layer, as it will be classifying its inputs into either pictures of dogs, or pictures of cats.
+The very first layer is the input to the model — an image in this case. The first layer is often called the input layer for this reason. The last, or output, layer of a classifier model like this will always have a number of nodes equal to the number of classifications the model is trained to identify. For example, in the model you will be creating there will be two nodes in the final layer, as it will be classifying its inputs into either pictures of dogs or pictures of cats.
 
 --- /collapse ---
 
@@ -37,7 +37,7 @@ Before you start changing anything, make sure you save the notebook to your driv
 
 --- task ---
 
-First, define the size of the images you're going to be using. The dataset that you'll be using to train the model is made up of 160x160 pixel images and that value is already stored in an `IMAGE_SIZE` variable. However, because of how colour works on computers, the images are actually three sets of 160x160 pixels — one each of the red, blue, and green values that combine to form the colour displayed at any given pixel. You can see more details on this below, if you're interested.
+First, define the size of the images that you will use. The dataset that you'll use to train the model is made up of 160x160 pixel images and that value is already stored in an `IMAGE_SIZE` variable. However, because of how colour works on computers, the images are actually three sets of 160x160 pixels — one each of the red, blue, and green values that combine to form the colour displayed at any given pixel. You can see more details on this below, if you're interested.
 
 In the first empty cell, create an `IMAGE_SHAPE` variable:
 
@@ -59,7 +59,7 @@ original_model = tf.keras.applications.MobileNetV2(input_shape=IMAGE_SIZE)
 ```
 --- /task ---
 
-Since MobileNetV2 is designed to run on a mobile device with limited battery, like a phone, it's not as large or as powerful as some other models. This means it doesn't always make the best guesses. Before you start changing it, test how good it is by asking it to identify a photo of a dog. Functions to let you do this easily have already been included in the notebook, but to understand how they work, check out the [Testing your computer's vision project](#).
+Since MobileNetV2 is designed to run on a mobile device with limited battery, like a phone, it's not as large or as powerful as some other models. This means it doesn't always make the best guesses. Before you start changing it, test how good it is by asking it to identify a photo of a dog. Functions to let you do this easily have already been included in the notebook, but to understand how they work, check out the ['Testing your computer's vision' project](#).
 
 --- task ---
 Below the model import, add this line:

@@ -2,7 +2,7 @@
 
 ### What you will make
 
-You will take an existing model trained to recognise lots of different kinds of images and retrain it to determine whether images show dogs or cats. The existing model already knows how to identify interesting features of an image. You will retrain the final layer of the model, which decides what those interesting features make up.
+You will take an existing model trained to recognise lots of different kinds of images and retrain it to determine whether an image shows dogs or cats. The existing model already knows how to identify interesting features of an image. You will retrain the final layer of the model, which decides what those interesting features make up.
 
 You will also measure how well the model can do this new job, and show how much you've improved on the original model in this task.
 

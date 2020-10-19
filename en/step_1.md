@@ -16,7 +16,7 @@ This project assumes you already know some Python. Specifically, it assumes you 
 + Lists
 + Functions, including creating your own function that accepts parameters
 
-The project also assumes that you know the basics of how to interact with an image classifying model and get a prediction from it. If you don't, you can learn this in the [testing your computer's vision project](https://projects.raspberrypi.org/en/projects/testing-vision).
+The project also assumes that you know the basics of how to interact with an image classifying model and get a prediction from it. If you don't, you can learn this in the ['Testing your computer's vision' project](https://projects.raspberrypi.org/en/projects/testing-vision).
 
 --- /collapse ---
 

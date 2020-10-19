@@ -37,7 +37,7 @@ Before you start changing anything, make sure you save the notebook to your driv
 
 --- task ---
 
-First, define the size of the images that you will use. The dataset that you'll use to train the model is made up of 160x160 pixel images and that value is already stored in an `IMAGE_SIZE` variable. However, because of how colour works on computers, the images are actually three sets of 160x160 pixels — one each of the red, blue, and green values that combine to form the colour displayed at any given pixel. You can see more details on this below, if you're interested.
+First, define the size of the images that you will use. The dataset that you'll use to train the model is made up of 160x160 pixel images and that value is already stored in an `IMAGE_SIZE` variable. However, because of how colour works on computers, the images are actually three sets of 160x160 pixels — one each of the red, blue, and green values that combine to form the colour displayed at any given pixel. You can see more details on this below.
 
 In the first empty cell, create an `IMAGE_SHAPE` variable:
 

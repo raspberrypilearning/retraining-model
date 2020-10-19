@@ -4,7 +4,7 @@ The next thing you'll need to train a model is some data. Models learn from exam
 
 It's worth noting that one of the cool things about machine learning models is that they remember everything they learned from the training data, without needing to store the training data itself. This means you can use millions of images to train a model without making the model any bigger than if you'd used a few hundred images! However, a model trained on millions of images will be much better at guessing things correctly than one trained on a few hundred.
 
-There's already some code, in the second cell, that loads the `cats_vs_dogs` training data. This data is a collection of image files and **labels** for these files, telling the computer which image is of a cat, and which of a dog.
+There's already some code in the second cell that loads the `cats_vs_dogs` training data. This data is a collection of image files and **labels** for these files, it tells the computer which image is of a cat, and which of a dog.
 
 ```python
 import tensorflow_datasets as tfds

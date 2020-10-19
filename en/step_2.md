@@ -7,7 +7,7 @@ Instead of training a whole new model, for this project you'll load an existing 
 title: What is a machine learning model?
 ---
 
-A model is a set of rules a computer has learned to complete a task, like determining what is in a picture it's shown.
+A model is a set of rules a computer has learned to complete a task, such as determining what is in a picture it's shown.
 
 These rules are divided up into **layers**. Each layer looks at the results of the one before it and tests them against some rules to decide what results to pass to the next layer.
 

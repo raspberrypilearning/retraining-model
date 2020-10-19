@@ -1,6 +1,6 @@
 ## Prepare your model for retraining
 
-Instead of training a whole new model, you'll be loading an existing one, called MobileNetV2, and changing what it classifies. The MobileNetV2 model is trained to classify lots of different images. This means it is already trained to identify interesting features of an image, which makes retraining it to use those features to recognise cats or dogs much quicker than creating an 'Is this a cat or a dog?' model from scratch.
+Instead of training a whole new model, for this project you'll load an existing one, called MobileNetV2, and change what it classifies. The MobileNetV2 model is trained to classify lots of different images. This means it is already trained to identify interesting features of an image, which makes retraining it to use those features to recognise cats or dogs much quicker than creating an 'Is this a cat or a dog?' model from scratch.
 
 --- collapse ---
 ---

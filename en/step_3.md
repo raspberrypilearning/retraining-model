@@ -18,14 +18,11 @@ import tensorflow_datasets as tfds
 
 The data gets broken into three groups, with the percentages defined in the `split` parameter of the load call:
 
-Training data
-: This data is used to train the model — to learn rules and decide how important they are.
+Training data: Used to train the model — to learn rules and decide how important they are.
 
-Validation data
-: This data is used to evaluate how well the model is performing while it is being trained. It is checked regularly during the training process. It has to be separate to the training data, or the model might learn only the exact images in the training data, with no general rules for identifying a dog or cat.
+Validation data: Used to evaluate how well the model is performing while it is being trained. It is checked regularly during the training process. It has to be separate to the training data, or the model might learn only the exact images in the training data, with no general rules for identifying a dog or cat.
 
-Testing data
-: This data is not used during the training process, but is used to evaluate how well it performs on unseen data. This check is used to avoid the risk of **overfitting**, where the model learns rules that are specific to the training and validation datasets, but do not apply to all cats and dogs.
+Testing data: Not used during the training process, but is used to evaluate how well it performs on unseen data. This check is used to avoid the risk of **overfitting**, where the model learns rules that are specific to the training and validation datasets, but do not apply to all cats and dogs.
 
 
 The data in those three groups needs to be broken into **batches** — groups of images. Each batch gets used to train the model before the model's **weights**, which define how important each rule is, get updated. The bigger the batch, the longer the gap between updates. 

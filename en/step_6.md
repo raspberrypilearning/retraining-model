@@ -1,6 +1,6 @@
 ## Test your model
 
-Now you've got a working model you can test it using pictures of cats and dogs!
+Now you've got a working model, you can use pictures of cats and dogs to test it!
 
 --- task ---
 

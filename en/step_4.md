@@ -22,7 +22,7 @@ prediction_layer = tf.keras.layers.Dense(2)
 ```
 --- /task ---
 
-Now you need to put your layers together with the original model you imported. This is done by using the `Sequential` function, because you are assembling them in the sequence you that you pass them to the function, from bottom to top.
+Now you need to put your layers together with the original model you imported. This is done by using the `Sequential` function, because you are assembling them in the sequence you pass them to the function, from bottom to top.
 
 --- task ---
 

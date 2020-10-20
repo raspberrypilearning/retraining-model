@@ -35,6 +35,6 @@ Run all the code in the notebook by opening the `Runtime` menu and choosing `Run
 This is going to take some time, probably more than ten minutes. Leave the tab open and check back about once a minute to see your model printing out the results for each epoch. Watch as the loss goes down and the accuracy goes up!
 --- /task ---
 
-![The output of model training, showing falling losses and rising accuracy.](images/training.png)
+![The output of model training, shows a fall in losses and rise in accuracy.](images/training.png)
 
 --- save ---

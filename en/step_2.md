@@ -78,7 +78,7 @@ You can run all the code by opening the `Runtime` menu and choosing `Run all`. T
 
 ![The 'File' menu in Google Colab, with 'Save a copy in Drive' highlighted.](images/dog_prediction_original.png)
 
-There are a couple of dog breeds in there, but most of the model's perferred classifications aren't very good! That's why you're going to improve it!
+There are a couple of dog breeds in there, but most of the model's preferred classifications aren't very good! That's why you're going to improve it!
 
 --- task ---
 Remove the call to `predict_with_old_model`. You only needed it for testing.

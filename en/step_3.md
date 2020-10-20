@@ -27,7 +27,7 @@ Testing data: Not used during the training process, but is used to evaluate how 
 
 The data in those three groups needs to be broken into **batches** — groups of images. Each batch gets used to train the model before the model's **weights**, which define how important each rule is, get updated. The bigger the batch, the longer the gap between updates. 
 
-There's no real rule for how big your batches should be, and it may be worth experimenting with different batch sizes on different data, to see if you get better results. Smaller batches can also help you train a model on a computer with less memory (for example, on a Raspberry Pi). Popular sizes are 32, 64, 128, and 256. It is possible to use batches as small as a single image, or as large as your whole dataset. For now, though, you're going to use 32.
+There's no real rule for how big your batches should be, and it may be worth experimenting with different batch sizes on different data, to see if you get better results. Smaller batches can also help you train a model on a computer with less memory (for example, on a Raspberry Pi). Popular sizes are 32, 64, 128, and 256. It is possible to use batches as small as a single image, or as large as your whole dataset. For now, you'll use 32.
 
 --- task ---
 

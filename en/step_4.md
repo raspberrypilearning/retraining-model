@@ -41,9 +41,9 @@ This stacks the `global_average_layer` and the `prediction_layer` on top of the 
 
 Next, you have to **compile** your model — convert it into a form that you can train and use to make predictions. To do this, you need to set two values: the **learning rate** of your model, and a **loss function**. 
 
-The learning rate tells your model how quickly to learn. You don't want it too small, as it might take far too long to learn anything. However, you don't want it too big or your model may rush ahead with the first thing that seems sort-of right, and miss an important rule or insight. You'll use a learning rate of `0.0001`.
+The learning rate tells your model how quickly to learn. You don't want it too small, as it might take far too long to learn anything. However, you don't want it too big or your model may rush ahead with the first thing that seems right, and miss an important rule or insight. You'll use a learning rate of `0.0001`.
 
-The loss function is how your model checks its performance during training. You'll use one called cross entropy loss, which is a good choice for image classification.
+The loss function is how your model checks its performance during training. You'll use one called cross-entropy loss, which is a good choice for image classification.
 
 --- task ---
 Below your existing code, create a variable for the base learning rate, then compile the model with that parameter and cross entropy loss. Also, tell the model to print out its accuracy as it is training.

@@ -15,7 +15,7 @@ These rules are divided up into **layers**. Each layer looks at the results of t
 
 Within each layer there are nodes, which have each learned a rule while the model was being trained, and will test it and produce a result when the model is predicting.
 
-The very first layer is the input to the model — an image in this case. The first layer is often called the input layer for this reason. The last, or output, layer of a classifier model like this will always have a number of nodes equal to the number of classifications the model is trained to identify. For example, in the model you will be creating there will be two nodes in the final layer, as it will be classifying its inputs into either pictures of dogs or pictures of cats.
+The very first layer is the input to the model — an image in this case. The first layer is often called the input layer for this reason. The last (output) layer of a classifier model like this will always have a number of nodes equal to the number of classifications the model is trained to identify. For example, in the model you will be creating there will be two nodes in the final layer, as it will be classifying its inputs into either pictures of dogs or pictures of cats.
 
 --- /collapse ---
 

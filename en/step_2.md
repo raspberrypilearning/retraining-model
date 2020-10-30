@@ -15,7 +15,7 @@ These rules are divided up into **layers**. Each layer looks at the results of t
 
 Within each layer there are nodes, which have each learned a rule while the model was being trained, and will test it and produce a result when the model is predicting.
 
-The very first layer is the input to the model — an image in this case. The first layer is often called the input layer for this reason. The last (output) layer of a classifier model like this will always have a number of nodes equal to the number of classifications the model is trained to identify. For example, in the model you will be creating there will be two nodes in the final layer, as it will be classifying its inputs into either pictures of dogs or pictures of cats.
+The very first layer is the input to the model — an image in this case. The first layer is often called the input layer for this reason. The last (output) layer of a classifier model like this will always have a number of nodes equal to the number of classifications the model is trained to identify. For example, in the model for this project, there will be two nodes in the final layer, as it will classify its inputs into either pictures of dogs or pictures of cats.
 
 --- /collapse ---
 
@@ -86,7 +86,7 @@ Remove the call to `predict_with_old_model`. You only needed it for testing.
 
 You need to remove the top layer from the existing MobileNetV2 model, where it decides which of the many objects it's been trained to identify is in the image, so you can add your own layers related to cats and dogs. This can be done when loading the model.
 
-![The same layer diagram as previously, except that the final layer shows a set of several blue dots being removed to be replaced by a pair of green dots.](images/layer_change.png)
+![The same layer diagram of black, pink, and green circles as at the beginning of this step. However, the final layer shows a set of several blue dots being removed to be replaced by a pair of green dots.](images/layer_change.png)
 
 --- task ---
 Update the line where you load the `original_model` to add the `include_top` parameter and set it to `False`.

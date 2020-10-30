@@ -12,7 +12,7 @@ global_average_layer = tf.keras.layers.GlobalAveragePooling2D()
 ```
 --- /task ---
 
-You just used that layer type as TensorFlow supplies it, but for the next one you need to take what you know about your data and apply it: because this classifier is deciding between two classes, its output should be two numbers. The higher number will indicate the predicted class.
+You just used that layer type as TensorFlow supplies it, but for the next one you need to take what you know about your data and apply it: because this classifier has to decide between two classes, its output should be two numbers. The higher number will indicate the predicted class.
 
 --- task ---
 Below the `global_average_layer` add a variable for `prediction_layer`:

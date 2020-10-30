@@ -14,7 +14,7 @@ TRAINING_EPOCHS = 10
 
 --- /task ---
 
-However, even with only ten epochs, this is still a lot of data and will take a long time to train. In fact, if you were to train the model right now, it would take over an hour! Luckily, Colab allows you to set your notebook to use GPUs — graphical processing units, the same hardware that makes video games look pretty — instead of CPUs — central processing units, the general-purpose processor that does most of the work on a computer. Because of the kind of mathematics the computer is doing for machine learning, it turns out the GPUs are much faster than CPUs.
+However, even with only ten epochs, this is still a lot of data and will take a long time to train. In fact, if you were to train the model right now, it would take over an hour! Luckily, Colab allows you to set your notebook to use GPUs — graphics processing units, the same hardware that makes video games look pretty — instead of CPUs — central processing units, the general-purpose processor that does most of the work on a computer. Because of the kind of mathematics the computer is doing for machine learning, it turns out the GPUs are much faster than CPUs.
 
 So tell TensorFlow to use the GPU device when it fits your model. You'll need to provide the training and validation batches you created earlier to the `model.fit` function.
 

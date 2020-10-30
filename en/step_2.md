@@ -84,7 +84,7 @@ There are a couple of dog breeds in there, but most of the model's preferred cla
 Remove the call to `predict_with_old_model`. You only needed it for testing.
 --- /task ---
 
-You need to remove the top layer from the existing MobileNetV2 model, where it decides which of the many objects it's been trained to identify is in the image, so you can add your own layers related to cats and dogs. This can be done when loading the model.
+You need to remove the top layer from the existing MobileNetV2 model. This is where the model decides which of the objects it's been trained to identify are in the image, so removing it means you can add your own layers related to cats and dogs. You can do this when you load the model.
 
 ![The same layer diagram of black, pink, and green circles as at the beginning of this step. However, the final layer shows a set of several blue dots being removed to be replaced by a pair of green dots.](images/layer_change.png)
 

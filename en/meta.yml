@@ -1,15 +1,19 @@
+---
 title: Cats vs dogs
 hero_image: images/banner.png
-description: Take a machine vision model that is bad at recgonising cats and dogs, and train it to be really good at it.
+description: Take a machine vision model that is bad at recgonising cats and dogs,
+  and train it to be really good at it.
 version: 4
 listed: false
 copyedit: false
-last_tested: "2020-06-16"
+last_tested: '2020-06-16'
 steps:
-  - title: Introduction
-  - title: Prepare the model for retraining
-  - title: Get and split training data
-  - title: Add your new layers
-  - title: Retrain the model
-  - title: Test your model
-  - title: What next?
+- title: Introduction
+  completion: engaged
+- title: Prepare the model for retraining
+- title: Get and split training data
+- title: Add your new layers
+- title: Retrain the model
+  completion: internal
+- title: Test your model
+- title: What next?
